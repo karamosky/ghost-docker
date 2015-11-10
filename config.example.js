@@ -32,6 +32,10 @@ config = {
         server: {
             host: '127.0.0.1',
             port: '2368'
+        },
+
+        paths: {
+            contentPath: path.join(__dirname, '/content/')
         }
     },
 
@@ -40,23 +44,6 @@ config = {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blog's published URL.
         url: process.env.GHOST_URL,
-
-        // Example mail config
-        // Visit http://support.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
-
-        // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
         database: {
             client: 'sqlite3',
