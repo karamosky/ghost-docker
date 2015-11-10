@@ -1,5 +1,6 @@
 FROM node:0.10-slim
 
+MAINTAINER Karam EL HABOUTI <karam@elhabouti.com>
 RUN groupadd user && useradd --create-home --home-dir /home/user -g user user
 
 RUN set -x \
