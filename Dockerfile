@@ -15,9 +15,17 @@ ENV GHOST_SOURCE /usr/src/ghost
 WORKDIR $GHOST_SOURCE
 
 ENV GHOST_VERSION 0.7.1
+# NODE_PORT ==> Port where pm2 will bind
+ENV NODE_PORT 2368
+# Mailgun configs
 ENV MAILGUN_USER postmaster@example.com
 ENV MAILGUN_PASSWORD secret
+# Mail from configs
+ENV MAIL_FROM_NAME "Your Name"
+ENV MAIL_FROM_ADDRESS yourmail@example.com
+# Ghost url
 ENV GHOST_URL http://blog.example.com
+
 RUN buildDeps=' \
 		gcc \
 		make \
@@ -42,6 +50,5 @@ VOLUME $GHOST_CONTENT
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-ENV NODE_PORT 2368
 EXPOSE $NODE_PORT
 CMD ["pm2", "start","index.js","--no-daemon"]

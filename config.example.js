@@ -11,6 +11,7 @@ config = {
     production: {
         url: process.env.GHOST_URL,
         mail: {
+          from: '"'+ process.env.MAIL_FROM_NAME +'" <'+ process.env.MAIL_FROM_ADDRESS +'>',
           transport: 'SMTP',
               options: {
                   service: 'Mailgun',
